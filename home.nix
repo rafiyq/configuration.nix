@@ -38,7 +38,8 @@
   
   programs.zsh = {
     enable = true;
-    dotDir = ".config/zsh"
+    dotDir = ".config/zsh";
+    localVariables = { DEFAULT_USER = "rafiyq"; };
     oh-my-zsh = {
       enable = true;
       plugins = ["git" "history"];
