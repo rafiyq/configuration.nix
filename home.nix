@@ -3,8 +3,8 @@
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "jdoe";
-  home.homeDirectory = "/home/jdoe";
+  home.username = "rafiyq";
+  home.homeDirectory = "/home/rafiyq";
   
   # Packages that should be installed to the user profile.
   home.packages = [
@@ -36,12 +36,25 @@
     };
   };
   
-  program.zsh = {
+  programs.zsh = {
     enable = true;
+    dotDir = ".config/zsh"
     oh-my-zsh = {
       enable = true;
-      plugins = ["git", "history"];
+      plugins = ["git" "history"];
       theme = "agnoster";
     };
+    plugins = [
+      {
+        # will source zsh-autosuggestions.plugin.zsh
+        name = "zsh-autosuggestions";
+        src = pkgs.fetchFromGitHub {
+          owner = "zsh-users";
+          repo = "zsh-autosuggestions";
+          rev = "v0.4.0";
+          sha256 = "0z6i9wjjklb4lvr7zjhbphibsyx51psv50gm07mbb0kj9058j6kc";
+        };
+      }
+    ];
   };
 }
