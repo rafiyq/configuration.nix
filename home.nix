@@ -39,6 +39,7 @@
   programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";
+    history.path = "$ZDOTDIR/.zsh_history";
     localVariables = { DEFAULT_USER = "rafiyq"; };
     oh-my-zsh = {
       enable = true;
