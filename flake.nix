@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of Jane Doe";
+  description = "Home Manager configuration using flakes";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs
@@ -11,7 +11,7 @@
   outputs = { home-manager, ... }:
     let
       system = "x86_64-linux";
-      username = "jdoe";
+      username = "rafiyq";
     in {
       homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
         # Specify the path to your home configuration here
