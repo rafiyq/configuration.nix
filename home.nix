@@ -13,6 +13,9 @@
     pkgs.tmux
     pkgs.yt-dlp
   ];
+  
+  # Raw configuration files
+  home.file.".tmux.conf".source = ./raw/tmux/tmux.conf;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

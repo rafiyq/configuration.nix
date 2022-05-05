@@ -1,4 +1,3 @@
-# Install Nix 
 # The multi-user Nix installation creates system users, and a system service for the Nix daemon.
 sh <(curl -L https://nixos.org/nix/install) --daemon
 
