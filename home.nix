@@ -10,12 +10,15 @@
   home.packages = [
     pkgs.aria
     pkgs.bat
+    pkgs.neovim
     pkgs.tmux
     pkgs.yt-dlp
   ];
   
   # Raw configuration files
-  home.file.".tmux.conf".source = ./raw/tmux/tmux.conf;
+  home.file.".tmux.conf".source = raw/tmux/tmux.conf;
+  #home.file.true.recursive.".config/nvim".source = ./raw/editor/nvim;
+  #xdg.configFile."nvim".source= ./raw/editor/nvim;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -45,6 +48,9 @@
     {
       theme = "solarized_dark";
       editor.cursor-shape.insert = "bar";
+      keys.insert = {
+        j.k = "normal_mode";
+      };
     };
   };
 
