@@ -10,7 +10,7 @@
   home.packages = [
     pkgs.aria
     pkgs.bat
-    pkgs.helix
+    pkgs.tmux
     pkgs.yt-dlp
   ];
 
@@ -36,16 +36,27 @@
     };
   };
   
+  programs.helix = {
+    enable = true;
+    settings =
+    {
+      theme = "solarized_dark";
+      editor.cursor-shape.insert = "bar";
+    };
+  };
+
   programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";
     history.path = "$ZDOTDIR/.zsh_history";
     localVariables = { DEFAULT_USER = "rafiyq"; };
+
     oh-my-zsh = {
       enable = true;
       plugins = ["git" "history"];
       theme = "agnoster";
     };
+
     plugins = [
       {
         # will source zsh-autosuggestions.plugin.zsh
