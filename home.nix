@@ -11,12 +11,18 @@
     pkgs.aria
     pkgs.bat
     pkgs.neovim
+    pkgs.mpv
     pkgs.tmux
     pkgs.yt-dlp
+    
+    # Fonts
+    pkgs.roboto-mono
+    pkgs.fira-code
+    pkgs.jetbrains-mono
   ];
   
-  # Raw configuration files
-  home.file.".tmux.conf".source = raw/tmux/tmux.conf;
+  # Raw configuration files (didn't work!)
+  #home.file.".tmux.conf".source = ./tmux.conf;
   #home.file.true.recursive.".config/nvim".source = ./raw/editor/nvim;
   #xdg.configFile."nvim".source= ./raw/editor/nvim;
 
@@ -58,7 +64,11 @@
     enable = true;
     dotDir = ".config/zsh";
     history.path = "$ZDOTDIR/.zsh_history";
-    localVariables = { DEFAULT_USER = "rafiyq"; };
+    localVariables = { 
+      DEFAULT_USER = "rafiyq";
+      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=23";
+      AUTOSUGGESTION_HIGHLIGHT_COLOR = "fg=23";
+    };
 
     oh-my-zsh = {
       enable = true;
