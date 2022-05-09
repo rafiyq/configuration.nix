@@ -57,7 +57,7 @@
       keys.insert = { j.k = "normal_mode"; };
 
       editor = {
-        mouser = false;
+        mouse = false;
         cursor-shape.insert = "bar";
         lsp.display-messages = true;
 
