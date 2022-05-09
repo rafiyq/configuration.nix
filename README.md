@@ -12,8 +12,10 @@ EOF
 ````
 
 # Install Home Manager and apply the configuration by
-`nix build --no-link <flake-uri>#homeConfigurations.rafiyq.activationPackage`
-`"$(nix path-info <flake-uri>#homeConfigurations.rafiyq.activationPackage)"/activate`
+```
+nix build --no-link <flake-uri>#homeConfigurations.rafiyq.activationPackage
+"$(nix path-info <flake-uri>#homeConfigurations.rafiyq.activationPackage)"/activate
+```
 
 # Building a flake-based configuration once home-manager is installed. (>=21.05)
 `home-manager switch --flake '<flake-uri>#rafiyq'`
