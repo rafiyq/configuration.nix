@@ -49,31 +49,32 @@
       init.defaultBranch = "main";
     };
   };
-  
+
   programs.helix = {
     enable = true;
-    settings =
-    {
-      theme = "solarized_dark";
-      keys.insert = {
-        j.k = "normal_mode";
-      };
+    settings = { 
+      theme = "solarized_dark"; 
+      keys.insert = { j.k = "normal_mode"; };
+
       editor = {
-	cursor-shape.insert = "bar";
-	lsp.display-messages = true;
-	whitespace = {
-	  render = {
-	    space = "all";
-	    tab = "all";
-	    newline = "none";
-	  };
-	  characters = {
-	    space = "·";
-	    nbsp = "⍽";
-	    tab = "→";
-	    newline = "⏎";
-	  };
-	};
+        mouser = false;
+        cursor-shape.insert = "bar";
+        lsp.display-messages = true;
+
+        whitespace = {
+          render = {
+            space = "all";
+            tab = "all";
+            newline = "none";
+          };
+
+          characters = {
+            space = "·";
+            nbsp = "⍽";
+            tab = "→";
+            newline = "⏎";
+          };
+        };
       };
     };
   };
