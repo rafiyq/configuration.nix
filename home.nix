@@ -38,55 +38,57 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
   
-  programs.git = {
-    enable = true;
-    userName = "rafiyq";
-    userEmail = "rafiyq@protonmail.com";
-    extraConfig = {
-      init.defaultBranch = "main";
-    };
-  };
+  # programs.git = {
+  #   enable = true;
+  #   userName = "rafiyq";
+  #   userEmail = "rafiyq@protonmail.com";
+  #   extraConfig = {
+  #     init.defaultBranch = "main";
+  #   };
+  # };
   
-  programs.helix = {
-    enable = true;
-    settings =
-    {
-      theme = "solarized_dark";
-      editor.cursor-shape.insert = "bar";
-      keys.insert = {
-        j.k = "normal_mode";
-      };
-    };
-  };
+  # programs.helix = {
+  #   enable = true;
+  #   settings =
+  #   {
+  #     theme = "solarized_dark";
+  #     editor.cursor-shape.insert = "bar";
+  #     keys.insert = {
+  #       j.k = "normal_mode";
+  #     };
+  #   };
+  # };
 
-  programs.zsh = {
-    enable = true;
-    dotDir = ".config/zsh";
-    history.path = "$ZDOTDIR/.zsh_history";
-    localVariables = { 
-      DEFAULT_USER = "rafiyq";
-      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=23";
-      AUTOSUGGESTION_HIGHLIGHT_COLOR = "fg=23";
-    };
+  # programs.zsh = {
+  #   enable = true;
+  #   dotDir = ".config/zsh";
+  #   history.path = "$ZDOTDIR/.zsh_history";
+  #   localVariables = { 
+  #     DEFAULT_USER = "rafiyq";
+  #     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=23";
+  #     AUTOSUGGESTION_HIGHLIGHT_COLOR = "fg=23";
+  #   };
 
-    oh-my-zsh = {
-      enable = true;
-      plugins = ["git" "history"];
-      theme = "agnoster";
-    };
+  #   oh-my-zsh = {
+  #     enable = true;
+  #     plugins = ["git" "history"];
+  #     theme = "agnoster";
+  #   };
 
-    plugins = [
-      {
-        # will source zsh-autosuggestions.plugin.zsh
-        name = "zsh-autosuggestions";
-        src = pkgs.fetchFromGitHub {
-          owner = "zsh-users";
-          repo = "zsh-autosuggestions";
-          rev = "v0.4.0";
-          sha256 = "0z6i9wjjklb4lvr7zjhbphibsyx51psv50gm07mbb0kj9058j6kc";
-        };
-      }
-    ];
-  };
+  #   plugins = [
+  #     {
+  #       # will source zsh-autosuggestions.plugin.zsh
+  #       name = "zsh-autosuggestions";
+  #       src = pkgs.fetchFromGitHub {
+  #         owner = "zsh-users";
+  #         repo = "zsh-autosuggestions";
+  #         rev = "v0.4.0";
+  #         sha256 = "0z6i9wjjklb4lvr7zjhbphibsyx51psv50gm07mbb0kj9058j6kc";
+  #       };
+  #     }
+  #   ];
+  # };
 }
