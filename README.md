@@ -14,4 +14,7 @@ nix build --no-link <flake-uri>#homeConfigurations.rafiyq.activationPackage
 "$(nix path-info <flake-uri>#homeConfigurations.rafiyq.activationPackage)"/activate
 
 # Building a flake-based configuration once home-manager is installed. (>=21.05)
-home-manager switch --flake '<flake-uri>#jdoe'
+home-manager switch --flake '<flake-uri>#rafiyq'
+
+# Direnv
+https://github.com/nix-community/nix-direnv
